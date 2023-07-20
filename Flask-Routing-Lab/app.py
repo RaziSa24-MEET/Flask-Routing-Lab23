@@ -11,6 +11,17 @@ app = Flask(  # Create a flask app
 @app.route('/')
 def hello_word():
    return render_template("home.html")
+@app.route("/product")
+def product():
+    return render_template("product.html")
+
+@app.route('/<string:name>')
+def name(name):
+    return render_template("home.html",n=name)
+
+@app.route("/cart")
+def cart():
+    return render_template("cart.html")
 
 # Your code should be above
 
